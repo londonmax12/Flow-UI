@@ -4,7 +4,7 @@
 
 bool Flow::FlowInstance::Init()
 {
-    mWindow = Flow::Window::CreateWindow();
+    mWindow = Flow::Window::CreatePlatformWindow();
 
     if (!mWindow)
         return false;
@@ -12,9 +12,15 @@ bool Flow::FlowInstance::Init()
     return true;
 }
 
+void Flow::FlowInstance::Update()
+{
+    mWindow->Update();
+}
+
 void Flow::FlowInstance::Shutdown()
 {
     if (mWindow) {
+        mWindow->Shutdown();
         delete mWindow;
         mWindow = nullptr;
     }

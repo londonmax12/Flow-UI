@@ -10,7 +10,9 @@ namespace Flow {
 		~FlowInstance();
 
 		bool Init();
+		void Update();
 		void Shutdown();
+
 	private:
 		Window* mWindow = nullptr;
 	};
