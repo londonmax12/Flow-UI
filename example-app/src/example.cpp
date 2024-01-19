@@ -1,6 +1,8 @@
 #include "flow.h"
 
 int main() {
-    PrintMessage();
+    Flow::FlowInstance flow = Flow::FlowInstance();
+    flow.Init();
+    flow.Shutdown();
     return 0;
 }
